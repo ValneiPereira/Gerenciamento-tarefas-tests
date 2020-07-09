@@ -11,23 +11,17 @@ Contexto:Home
 Cenário: Usuário autenticado 
     Quando faço login com "eu@papito.io" e "123456" 
     Então vejo a mensagem de boas vindas "Olá, papito" 
- 
-@sprint1
-Cenário: Senha incorreta 
-    Quando faço login com "eu@papito.io" e "xpto123" 
-    Então vejo a mensagem de alerta "Senha inválida." 
 
-@sprint1
-Cenário: Usuário não cadastrado 
-    Quando faço login com "eu@papito404.io" e "123456" 
-    Então vejo a mensagem de alerta "Usuário não cadastrado." 
+@tentativa
+Esquema do Cenário: Tentativa de login
+    Quando faço login com "<email>" e "<senha>" 
+    Então vejo a mensagem de alerta "<saida>"
 
-@sprint2
-Cenário: E-mail deve obrigatório 
-    Quando faço login com "" e "123456" 
-    Então vejo a mensagem de alerta "Email incorreto ou ausente." 
+    Exemplos:
+    | email           | senha   | saida                       |
+    | eu@papito.io    | xpto123 | Senha inválida.             |
+    | eu@papito404.io | 123456  | Usuário não cadastrado.     |
+    |                 | 123456  | Email incorreto ou ausente. |
+    | eu@papito404.io |         | Senha ausente.              |
 
-@sprint2
-Cenário: Senha deve ser obrigatório 
-    Quando faço login com "eu@papito404.io" e "" 
-    Então vejo a mensagem de alerta "Senha ausente."
+
