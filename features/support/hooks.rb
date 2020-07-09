@@ -1,3 +1,10 @@
+Before do
+  @nav = Navbar.new
+  @side = Sidebar.new
+  @login_page = LoginPage.new
+  @tarefas_pages = TarefasPage.new
+end
+
 Before('@login') do
   @login_page = LoginPage.new
   @login_page.acesso
@@ -5,6 +12,5 @@ Before('@login') do
 end
 
 After('@logout') do
-  find('.navbar a[href*=dropdown]').click
-  find('.navbar a[href$=logout]').click
+  @nav.sair
 end
