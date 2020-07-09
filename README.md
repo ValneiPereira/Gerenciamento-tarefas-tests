@@ -9,3 +9,8 @@
 - Fazer login com e-mail e senha 
 - Clicou em OK, é autenticado com sucesso 
 Olá, Fulano 
+
+**Meu Perfil**
+- **Para** que eu possa manter meus dados atualizados
+- **Sendo** um usuário
+- **Posso** completar o meu cadastro do Perfil.
