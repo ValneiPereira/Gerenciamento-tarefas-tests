@@ -3,6 +3,7 @@ Before do
   @side = Sidebar.new
   @login_page = LoginPage.new
   @tarefas_pages = TarefasPage.new
+  @perfil_pages = PerfilPage.new
 end
 
 Before('@login') do
