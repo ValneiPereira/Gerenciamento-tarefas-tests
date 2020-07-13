@@ -12,7 +12,9 @@ Dado('quero taguear esta tarefa com:') do |tags|
 end
 
 Dado('eu já cadastrei esta tarefa e esqueci') do
-  @tarefas_pages.cadastrar(@nome_tarefa, @data_tarefa)
+ steps %(
+  Quando faço o cadastro desta tarefa
+ )
 end
 
 Quando('faço o cadastro desta tarefa') do
@@ -26,4 +28,9 @@ end
 
 Então('devo ver a seguinte mensagem {string}') do |mensagem_alerta|
   expect(@tarefas_pages.alerta).to eql mensagem_alerta
+end
+
+Então('devo ver somente {int} tarefa com o nome cadastrado') do |quantidade|
+ res = DAO.new.buscar_tarefa(@nome_tarefa, @usuario[:email])
+ expect(res.count).to eql quantidade
 end

@@ -1,5 +1,4 @@
 #language:pt
-
 Funcionalidade: Cadastro de tarefas
     Para que eu possa eu possa organizar minha vida
     Sendo um usuário cadastrado
@@ -19,6 +18,7 @@ Funcionalidade: Cadastro de tarefas
         | Maionese     |
       Quando faço o cadastro desta tarefa
       Então devo ver esta tarefa com o status "Em andamento"
+      E devo ver somente 1 tarefa com o nome cadastrado
 
   @tentativa @login @logout
   Esquema do Cenário: Tentar cadastrar
@@ -41,4 +41,5 @@ Funcionalidade: Cadastro de tarefas
       Mas eu já cadastrei esta tarefa e esqueci
       Quando faço o cadastro desta tarefa
       Então devo ver a seguinte mensagem "Tarefa duplicada."
+      E devo ver somente 1 tarefa com o nome cadastrado
 
