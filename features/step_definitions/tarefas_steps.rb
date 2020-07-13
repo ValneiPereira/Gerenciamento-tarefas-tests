@@ -11,6 +11,10 @@ Dado('quero taguear esta tarefa com:') do |tags|
   @tags = tags.hashes
 end
 
+Dado('eu já cadastrei esta tarefa e esqueci') do
+  @tarefas_pages.cadastrar(@nome_tarefa, @data_tarefa)
+end
+
 Quando('faço o cadastro desta tarefa') do
   @tarefas_pages.cadastrar(@nome_tarefa, @data_tarefa)
 end

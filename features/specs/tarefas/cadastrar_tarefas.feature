@@ -5,7 +5,7 @@ Funcionalidade: Cadastro de tarefas
     Sendo um usuário cadastrado
     Possa adicionar novas tarefas no meu Painel
 
-  @smoke @login
+  @smoke @login @logout
   Cenário: Nova Tarefa
 
       Dado que o nome da minha tarefa é "Fazer Compras"
@@ -32,12 +32,13 @@ Funcionalidade: Cadastro de tarefas
       | nome | data       | mensagem                            |
       | Ler  | 21/08/2018 | 10 caracteres é o mínimo permitido. |
       |      | 21/08/2018 | Nome é obrigatório.                 |
-      
+
+  @login @logout @dup    
   Cenário: Tarefa não pode ser duplicado
 
       Dado que o nome da minha tarefa é "Ler um livro de MongoDB"
       E a data de finalização será "22/08/2018"
       Mas eu já cadastrei esta tarefa e esqueci
       Quando faço o cadastro desta tarefa
-      Então devo ver a seguinte mensagem "Tarefa duplicada"
+      Então devo ver a seguinte mensagem "Tarefa duplicada."
 
