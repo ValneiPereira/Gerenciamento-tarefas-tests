@@ -5,7 +5,8 @@ Funcionalidade: Cadastro de tarefas
     Sendo um usuário cadastrado
     Possa adicionar novas tarefas no meu Painel
 
-  Cenário: Nova tarefa
+  @smoke @login
+  Cenário: Nova Tarefa
 
       Dado que o nome da minha tarefa é "Fazer Compras"
       E a data de finalização será "20/08/2018"
@@ -13,27 +14,30 @@ Funcionalidade: Cadastro de tarefas
         | tag          |
         | Compras      |
         | SuperMercado |
-        | Ketchup      |      
-      Quando faço o cadastrado desta tarefa
+        | Ketchup      |
+        | Mostarda     |
+        | Maionese     |
+      Quando faço o cadastro desta tarefa
       Então devo ver esta tarefa com o status "Em andamento"
 
-  Cenário: Tarefa com nome muito curto
+  @tentativa @login @logout
+  Esquema do Cenário: Tentar cadastrar
 
-      Dado que o nome da minha tarefa é "Ler"
-      E a data de finalização será "21/08/2018"
+      Dado que o nome da minha tarefa é "<nome>"
+      E a data de finalização será "<data>"
       Quando faço o cadastro desta tarefa
-      Então devo ver a seguinte mensagem:
-      """
-      10 caracteres é o minimo permitido.
-      """
-  
-  Cenário: Tarefa não pode ser duplicada
+      Então devo ver a seguinte mensagem "<mensagem>"
+      
+      Exemplos:
+      | nome | data       | mensagem                            |
+      | Ler  | 21/08/2018 | 10 caracteres é o mínimo permitido. |
+      |      | 21/08/2018 | Nome é obrigatório.                 |
+      
+  Cenário: Tarefa não pode ser duplicado
 
       Dado que o nome da minha tarefa é "Ler um livro de MongoDB"
       E a data de finalização será "22/08/2018"
       Mas eu já cadastrei esta tarefa e esqueci
       Quando faço o cadastro desta tarefa
-      Então devo ver a seguinte mensagem:
-      """
-      Tarefa duplicada
-      """
+      Então devo ver a seguinte mensagem "Tarefa duplicada"
+

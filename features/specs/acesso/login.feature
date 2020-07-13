@@ -12,7 +12,7 @@ Cenário: Usuário autenticado
     Quando faço login com "eu@papito.io" e "123456" 
     Então vejo a mensagem de boas vindas "Olá, papito" 
 
-@tentativa
+@tentativa_login
 Esquema do Cenário: Tentativa de login
     Quando faço login com "<email>" e "<senha>" 
     Então vejo a mensagem de alerta "<saida>"
