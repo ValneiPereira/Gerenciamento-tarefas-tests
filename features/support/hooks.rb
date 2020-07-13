@@ -7,9 +7,9 @@ Before do
 end
 
 Before('@login') do
-  @login_page = LoginPage.new
+  @usuario = { email: 'eu@papito.io', senha: '123456' }
   @login_page.acesso
-  @login_page.logar('eu@papito.io', '123456')
+  @login_page.logar(@usuario[:email], @usuario[:senha])
 end
 
 After('@logout') do

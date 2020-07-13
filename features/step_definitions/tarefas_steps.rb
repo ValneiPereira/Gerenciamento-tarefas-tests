@@ -1,7 +1,6 @@
-require 'faker'
-
 Dado('que o nome da minha tarefa é {string}') do |nome_tarefa|
-  @nome_tarefa = "#{nome_tarefa} - #{Faker::Lorem.characters(number:10)}"
+  @nome_tarefa = nome_tarefa
+  DAO.new.remover_tarefa(@nome_tarefa, @usuario[:email])
 end
 
 Dado('a data de finalização será {string}') do |data_finalizacao|
