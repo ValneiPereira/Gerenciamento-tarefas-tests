@@ -1,3 +1,5 @@
+require 'sections/navbar.rb'
+
 module Pages
   class Login < SitePrism::Page
     set_url '/login'
@@ -6,6 +8,8 @@ module Pages
     element :input_senha, 'input[name=password]'
     element :btn_logar, 'button[id*=btnLogin]'
     element :alerta, '.alert-login'
+
+    section :navbar, Sections::Navbar, '.navbar'
 
     def logar(email, senha)
       input_login.set email
