@@ -1,7 +1,8 @@
+$pages = Pages::Pages
+
 Before do
   @nav = Navbar.new
   @side = Sidebar.new
-  @login_page = LoginPage.new
   @tarefas_pages = TarefasPage.new
   @perfil_pages = PerfilPage.new
 end
