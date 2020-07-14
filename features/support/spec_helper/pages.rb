@@ -5,8 +5,9 @@ module Pages
   class Pages
     class << self
       def login
-        Pages::Login.new
+        Login.new
       end
+      
     end
   end
 end
