@@ -4,13 +4,13 @@ Funcionalidade: Meu Perfil
     Sendo um usuário
     Possa completar o meu cadastro do Perfil
 
-    @logout
+    @logout @meuperfil
     Esquema do Cenário: Atualizar perfil
 
-        Dado que estou autenticando com "<email>" e "<senha>"  #pre-condição
-        E acesso o meu perfil                                  #complemento do Dado
-        Quando completo o meu cadastro "<empresa>" e "<cargo>" #ação
-        Então devo ver a mensagem de atualização cadastral:    #verificação
+        Dado que estou autenticando com "<email>" e "<senha>"
+        E acesso o meu perfil
+        Quando completo o meu cadastro "<empresa>" e "<cargo>"
+        Então devo ver a mensagem de atualização cadastral:
         """
         Perfil atualizado com sucesso.
         """

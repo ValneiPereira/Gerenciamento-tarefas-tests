@@ -1,4 +1,5 @@
-require 'sections/navbar.rb'
+require_relative '../sections/navbar.rb'
+require_relative '../sections/sidebar.rb'
 
 module Pages
   class Login < SitePrism::Page
@@ -10,6 +11,7 @@ module Pages
     element :alerta, '.alert-login'
 
     section :navbar, Sections::Navbar, '.navbar'
+    section :sidebar, Sections::Sidebar, 'ul.luna-nav'
 
     def logar(email, senha)
       input_login.set email

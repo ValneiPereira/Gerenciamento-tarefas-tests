@@ -7,7 +7,11 @@ module Pages
       def login
         Login.new
       end
-      
+
+      def perfil
+        Perfil.now
+      end
     end
   end
 end
+

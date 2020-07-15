@@ -14,3 +14,4 @@ end
 Então('vejo a mensagem de alerta {string}') do |mensagem|
   expect(@login.alerta).to have_content mensagem
 end
+

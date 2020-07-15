@@ -1,10 +1,8 @@
 $pages = Pages::Pages
-
+$perfil = Pages::Pages
+$sidebar= Sections::Sections
 Before do
-  @nav = $pages.login.navbar
-  @side = Sidebar.new
   @tarefas_pages = TarefasPage.new
-  @perfil_pages = PerfilPage.new
 end
 
 Before('@login') do
@@ -15,5 +13,6 @@ Before('@login') do
 end
 
 After('@logout') do
+  @nav = $pages.login.navbar
   @nav.sair
 end
